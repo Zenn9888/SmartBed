@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>臺中榮民總醫院 智慧簽床系統</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a5f7a;
+            --secondary-color: #2c8eb3;
+            --background-light: #f4f7fa;
+            --text-color: #2c3e50;
+            --card-background: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', '微軟正黑體', Arial, sans-serif;
+            background-color: var(--background-light);
+            color: var(--text-color);
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 15px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .header-icons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .header-icons i {
+            font-size: 3rem;
+            margin: 0 20px;
+            color: rgba(255,255,255,0.85);
+            text-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .section {
+            margin: 50px 0;
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        .steps-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .step {
+            flex-basis: calc(33.333% - 25px);
+            background: var(--card-background);
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            padding: 30px;
+            text-align: left;  /* Changed from center to left */
+            border-top: 5px solid var(--primary-color);
+            transform: translateY(0);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .step:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+        }
+
+        .step i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            display: block;
+            text-align: center;  /* Keep icon centered */
+        }
+
+        .step h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-align: center;  /* Keep title centered */
+        }
+
+        .step p {
+            color: var(--text-color);
+            position: relative;
+            z-index: 2;
+            text-align: justify;  /* Add justify text alignment */
+            hyphens: auto;  /* Enable hyphenation */
+            word-wrap: break-word;  /* Prevent overflow */
+        }
+
+        /* Rest of the CSS remains the same as the original */
+    </style>
+</head>
+<body>
+    <!-- The rest of the HTML remains the same as the original -->
+    <header>
+        <div class="container">
+            <div class="header-icons">
+                <i class="fas fa-hospital"></i>
+                <i class="fas fa-bed"></i>
+            </div>
+            <h1>臺中榮民總醫院</h1>
+            <p>智慧簽床系統操作與訓練指引</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- 操作手冊 -->
+        <div class="section">
+            <h2>簽床系統操作手冊</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <i class="fas fa-folder-open"></i>
+                    <h3>步驟 1：打開資料夾</h3>
+                    <p>找到 <strong>SmartBed</strong> 資料夾，並點選<strong>啟動程序.bat</strong>。若無法執行，請進入 <strong>src</strong> 子資料夾，點選 <strong>啟動程序.bat</strong>，系統將自動安裝所需環境。</p>
+                </div>
+                <div class="step">
+                    <i class="fas fa-file-upload"></i>
+                    <h3>步驟 2：載入預測資料與模型</h3>
+                    <p>開啟系統後，依序點擊「<strong>載入模型</strong>」與「<strong>載入預測資料</strong>」，將所需檔案上傳至系統。請確保資料檔案為 CSV 格式。</p>
+                </div>
+                <div class="step">
+                    <i class="fas fa-bed"></i>
+                    <h3>步驟 3：選擇病房與床位</h3>
+                    <p>載入完畢後，選擇病房號碼，點選床位按鈕。系統右方資訊欄將顯示該床位的病人建議入住概率排序及推薦病人資料。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 訓練模型步驟 -->
+        <div class="section">
+            <h2>訓練模型步驟</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <i class="fas fa-folder-open"></i>
+                    <h3>步驟 1：打開資料夾</h3>
+                    <p>找到 <strong>SmartBed</strong> 資料夾。若無法執行，進入 <strong>src</strong> 子資料夾，點選 <strong>啟動程序.bat</strong>，系統將自動安裝所需環境。</p>
+                </div>
+                <div class="step">
+                    <i class="fas fa-file-upload"></i>
+                    <h3>步驟 2：載入訓練資料</h3>
+                    <p>系統中點選「<strong>載入訓練資料</strong>」，選擇包含訓練數據的 <strong>CSV</strong> 檔案，如簽床紀錄。</p>
+                </div>
+                <div class="step">
+                    <i class="fas fa-cogs"></i>
+                    <h3>步驟 3：訓練模型</h3>
+                    <p>資料載入完成後，點選「<strong>訓練模型</strong>」。系統將自動處理數據並訓練模型，請耐心等待。訓練完成後，系統將顯示訓練結果。</p>
+                </div>
+                <div class="step">
+                    <i class="fas fa-code"></i>
+                    <h3>步驟 4：調整程式碼</h3>
+                    <p>需調整模型邏輯時，開啟 <strong>src/model.py</strong> 檔案，直接修改訓練程式碼。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 臺中榮民總醫院 智慧簽床系統</p>
+    </footer>
+</body>
+</html>
